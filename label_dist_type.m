@@ -22,7 +22,7 @@ c_swir = curr_cft(2,5);
 n_swir = next_cft(2,5);
 
 if nir > t_c && vis < -t_c && swir < -t_c
-    if c_nir > abs(n_nir) && c_vis < -abs(n_vis) && c_swir < -abs(n_swir)
+    if n_nir > abs(c_nir) && n_vis < -abs(c_vis) && n_swir < -abs(c_swir)
         dist_type = 2; % aforestation
     else
         dist_type = 1; % regrowth
