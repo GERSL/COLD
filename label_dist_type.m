@@ -5,6 +5,8 @@ function [dist_type,dist_year,dist_doy]=label_dist_type(curr_cft,curr_time,t_c,v
 % 3 => land disturbance
 % 
 % Version 1.0: (Zhe Zhu 10/30/2018)
+% Modification: Identifications of Aforestation and Regrowth breaks are modified in Line #27. (Zhe and Shi, 21/08/2020)
+% 
 %% get disurbance pixel
 % vec = obs - pred
 % only provide disturbance map
