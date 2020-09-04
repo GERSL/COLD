@@ -1,7 +1,8 @@
 function rec_cg = TrendSeasonalFit_COLDLine(dir_l,n_rst,ncols,nrows,T_cg,Tmax_cg,conse,num_c,nbands,B_detect)
-% CCDC-COLD 13.3 version - Zhe Zhu, University of Connecticut, Storrs
+% CCDC-COLD 13.4 version - Zhe Zhu, University of Connecticut, Storrs
 % Continuous Change Detection (CCD) designed for Continuous mOnitoring of Land Distubance (COLD)
-%% Revisions: $ Date: 10/29/2018 $ Copyright: Zhe Zhu
+%% Revisions: $ Date: 9/03/2020 $ Copyright: Zhe Zhu
+%  Version 13.04  Update model for every three observations (09/03/2020)
 %  Version 13.03  Modified model intitializatin test (10/29/2018)
 %  Version 13.02  Add included angle to exlcude false positive change (10/05/2018)
 %  Version 13.01  Do not need clear observations more than 25 percent (03/28/2018)
@@ -760,9 +761,10 @@ for i_ids = 1:ncols
                         % IDs that haven't updated
                         IDsOld = IDs;
                     else
-                        if clrx(i)-clrx(i_start) > i_count %= num_yrs%1.33*i_count
+                        if i > i_count + 2 %= num_yrs%1.33*i_count
+                        % if clrx(i)-clrx(i_start) > i_count %= num_yrs%1.33*i_count
                             % update i_count at each interation
-                            i_count = clrx(i)-clrx(i_start);
+                            i_count = i; % clrx(i)-clrx(i_start);
                             
                             % defining computed variables
                             fit_cft = zeros(max_num_c,nbands-1);
