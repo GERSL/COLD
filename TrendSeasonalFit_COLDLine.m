@@ -976,7 +976,15 @@ for i_ids = 1:ncols
         end
     end % end of if sum(idgood) statement    
 end % end of for i_ids loop
-save([dir_l,'/',n_rst,'/','record_change',num2str(nrows)],'rec_cg');
+% save([dir_l,'/',n_rst,'/','record_change',num2str(nrows)],'rec_cg');
+% when saving matlab file, the computer is shut off. The matlab file may be broken.
+file_name_mat = ['record_change',num2str(nrows),'.mat'];
+file_name_mat_part = [file_name_mat, '.part'];
+% save it first as name with part
+save([dir_l,'/',n_rst,'/', file_name_mat_part],'rec_cg');
+% rename it
+movefile([dir_l,'/',n_rst,'/',file_name_mat_part], [dir_l,'/',n_rst,'/',file_name_mat]);
+
 end % end of function
 
 % function to caculate included angle between ajacent pair of change vectors
