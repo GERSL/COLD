@@ -43,6 +43,7 @@ Tmax_cg = 1-1e-5;
 
 % get image parameters automatically
 imf=dir('L*'); % folder names
+imf(~[imf.isdir]) = []; % only directory
 [nrows,ncols,nbands,~,~,~,num_imgs] = autoPara(imf);
 
 % folder name of all CCDC results 
