@@ -700,6 +700,9 @@ for i_ids = 1:ncols
                         % update i_count at each interation
                         i_count = clrx(i)-clrx(i_start);
                         
+                        % record previous end i ######Junxue
+                        pre_end = i;
+                        
                         % defining computed variables
                         fit_cft = zeros(max_num_c,nbands-1);
                         % rmse for each band
@@ -761,10 +764,12 @@ for i_ids = 1:ncols
                         % IDs that haven't updated
                         IDsOld = IDs;
                     else
-                        if i >= i_count + 3 %= num_yrs%1.33*i_count
-                        % if clrx(i)-clrx(i_start) > i_count %= num_yrs%1.33*i_count
+                        if i - pre_end >= 3%######Junxue %clrx(i)-clrx(i_start) >= num_yrs%1.33*i_count
                             % update i_count at each interation
-                            i_count = i; % clrx(i)-clrx(i_start);
+                            i_count = clrx(i)-clrx(i_start);
+                            
+                            % record previous end i ######Junxue
+                            pre_end = i;
                             
                             % defining computed variables
                             fit_cft = zeros(max_num_c,nbands-1);
