@@ -1,4 +1,4 @@
-% This MATLAB file is to scan the toolboxs requried
+% This MATLAB file is to scan the toolboxes requried
 %
 % Learn more from https://www.mathworks.com/help/matlab/matlab_prog/identify-dependencies.html#responsive_offcanvas
 %
