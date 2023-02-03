@@ -10,3 +10,5 @@ If no full MATLAB licenses, you may run **scanRequiredToolboxes.m** for displayi
 
 Please cite the following paper:
 Zhu, Z., Zhang, J., Yang, Z., Aljaddani, A.H., Cohen, W.B., Qiu, S. and Zhou, C., Continuous monitoring of land disturbance based on Landsat time series. Remote Sensing of Environment (2019). https://doi.org/10.1016/j.rse.2019.03.009
+
+![plot](https://github.com/GERSL/COLD/blob/master/cold_animation.gif?raw=true)
